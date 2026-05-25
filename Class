@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+class Time {
+private:
+    int hour;
+    int minute;
+    int second;
+
+public:
+
+    void setTime(int Hour, int Minute, int Second) {
+
+        hour = (Hour >= 0 && Hour < 24) ? Hour : 0;
+
+        minute = (Minute >= 0 && Minute < 60) ? Minute : 0;
+
+        second = (Second >= 0 && Second < 60) ? Second : 0;
+    }
+
+    void printTime() {
+
+        cout << hour << " : "
+             << minute << " : "
+             << second;
+    }
+};
+
+int main() {
+
+    Time lunchTime;
+    Time dinnerTime;
+
+    lunchTime.setTime(12, 30, 20);
+
+    dinnerTime.setTime(30, 70, 80);
+
+    cout << "Lunch will be held at ";
+    lunchTime.printTime();
+    cout << endl;
+
+    cout << "Dinner will be held at ";
+    dinnerTime.printTime();
+    cout << endl;
+
+    return 0;
+}
